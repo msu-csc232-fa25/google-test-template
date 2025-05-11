@@ -130,7 +130,7 @@ namespace csc232
     TEST_F(Task1TestFixture, ItIsNotReady)
     {
         std::cerr << "Task 1 is not ready for evaluation; please toggle the TEST_TASK1 macro to TRUE\n";
-        FAIL();
+        ADD_FAILURE_AT("csc232.h", 22, "Toggle the TEST_TASK1 macro to TRUE to enable this test.");
     }
 #endif
 
