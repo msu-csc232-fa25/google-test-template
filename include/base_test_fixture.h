@@ -1,10 +1,10 @@
 /**
  * CSC232 - Data Structures
- * Missouri State University, Spring 2025
+ * Missouri State University, Fall 2025
  *
  * @file      base_test_fixture.h
  * @authors   Jim Daehn <jdaehn@missouristate.edu>
- * @brief     Google Test implementation template.
+ * @brief     Google Test implementation base test fixture.
  */
 
 #ifndef CSC232_BASE_TEST_FIXTURE_H
@@ -13,6 +13,9 @@
 #include "csc232.h"
 #include "gtest/gtest.h"
 
+/**
+ * Namespace to encapsulate course work in CSC232 - Data Structures.
+ */
 namespace csc232
 {
     /**
@@ -21,12 +24,34 @@ namespace csc232
     class CSC232BaseTestFixture : public ::testing::Test
     {
     public:
+        /**
+         * Default constructor.
+         */
         CSC232BaseTestFixture( ) = default;
+
+        /**
+         * Default virtual destructor.
+         */
         virtual ~CSC232BaseTestFixture( ) override = default;
 
+        /**
+         * Deleted copy constructor.
+         */
         CSC232BaseTestFixture( const CSC232BaseTestFixture & ) = delete;
+
+        /**
+         * Deleted copy assignment operator.
+         */
         auto operator=( const CSC232BaseTestFixture & ) -> CSC232BaseTestFixture & = delete;
+
+        /**
+         * Deleted move constructor.
+         */
         CSC232BaseTestFixture( CSC232BaseTestFixture && ) = delete;
+
+        /**
+         * Deleted move assignment operator.
+         */
         auto operator=( CSC232BaseTestFixture && ) -> CSC232BaseTestFixture & = delete;
 
     protected:

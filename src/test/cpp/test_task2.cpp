@@ -1,11 +1,11 @@
 
 /**
  * CSC232 - Data Structures
- * Missouri State University, Spring 2025
+ * Missouri State University, Fall 2025
  *
  * @file      test_task2.cpp
  * @authors   Jim Daehn <jdaehn@missouristate.edu>
- * @brief     Google Test implementation template.
+ * @brief     Google Test implementation for task 2 activities.
  */
 
 #include "base_test_fixture.h"
@@ -18,6 +18,9 @@
 namespace csc232
 {
 #if TEST_TASK2
+    /**
+     * Text fixture for task 2.
+     */
     class Task2TestFixture : public CSC232BaseTestFixture
     {
     };

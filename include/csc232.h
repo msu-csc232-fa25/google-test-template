@@ -18,7 +18,6 @@
 #define TRUE 1
 
 #define EXECUTE_PREAMBLE TRUE
-#define IS_HW FALSE
 
 #define TEST_TASK1 FALSE
 #define TEST_TASK2 FALSE
