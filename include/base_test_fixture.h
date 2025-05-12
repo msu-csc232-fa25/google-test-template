@@ -89,7 +89,7 @@ namespace csc232
          * @param class_name a class name whose declaration we seek in the given file
          * @return true if the given class is declared in the given file, false otherwise.
          */
-        virtual auto isClassDeclared( const std::string &file_path, const std::string &class_name ) -> bool
+        virtual auto is_class_declared( const std::string &file_path, const std::string &class_name ) -> bool
         {
             std::ifstream file( file_path );
             if ( !file.is_open( ) )
@@ -117,7 +117,7 @@ namespace csc232
          * @param class_name a class name whose declaration we seek in the given file and namespace
          * @return true if the given class is declared in the specfied namespace, false otherwise
          */
-        virtual auto isClassInNamespaceDeclared( const std::string &file_path, const std::string &namespace_name,
+        virtual auto is_class_in_namespace_declared( const std::string &file_path, const std::string &namespace_name,
                                                  const std::string &class_name ) -> bool
         {
             std::ifstream file( file_path );
@@ -154,7 +154,7 @@ namespace csc232
          * @param base_class_name a class name from which we are deriving
          * @return true if the given class is declared in the given namespace and derived the given base class, false otherwise.
          */
-        virtual auto isClassDerivedFromBase( const std::string &file_path, const std::string &namespace_name,
+        virtual auto is_class_derived_from_base( const std::string &file_path, const std::string &namespace_name,
                                              const std::string &class_name, const std::string &base_class_name ) -> bool
         {
             std::ifstream file( file_path );
@@ -191,7 +191,7 @@ namespace csc232
          * @param method_name a method name we wish to determine is declared in the given class
          * @return true if the given method is declared in a class found in the given namespace, false otherwise.
          */
-        virtual auto isMethodDeclaredInClass( const std::string &file_path, const std::string &namespace_name, const std::string &class_name, const std::string &method_name ) -> bool
+        virtual auto is_method_declared_in_class( const std::string &file_path, const std::string &namespace_name, const std::string &class_name, const std::string &method_name ) -> bool
         {
             std::ifstream file( file_path );
             if ( !file.is_open( ) )
