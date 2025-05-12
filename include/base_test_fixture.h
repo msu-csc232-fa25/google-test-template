@@ -83,6 +83,8 @@ namespace csc232
             /* template method for any customized additional setup */
         }
 
+        // NOLINTBEGIN(bugprone-easily-swappable-parameters)
+        
         /**
          * Utility method to see if a class has been declared in some particular file.
          * @param file_path the path to the file under interrogation
@@ -118,7 +120,7 @@ namespace csc232
          * @return true if the given class is declared in the specfied namespace, false otherwise
          */
         virtual auto is_class_in_namespace_declared( const std::string &file_path, const std::string &namespace_name,
-                                                 const std::string &class_name ) -> bool
+                                                     const std::string &class_name ) -> bool
         {
             std::ifstream file( file_path );
             if ( !file.is_open( ) )
@@ -155,7 +157,7 @@ namespace csc232
          * @return true if the given class is declared in the given namespace and derived the given base class, false otherwise.
          */
         virtual auto is_class_derived_from_base( const std::string &file_path, const std::string &namespace_name,
-                                             const std::string &class_name, const std::string &base_class_name ) -> bool
+                                                 const std::string &class_name, const std::string &base_class_name ) -> bool
         {
             std::ifstream file( file_path );
             if ( !file.is_open( ) )
@@ -184,7 +186,7 @@ namespace csc232
         }
 
         /**
-         * 
+         *
          * @param file_path the path to the file under interrogation
          * @param namespace_name the namespace under interrogation
          * @param class_name a class name whose declaration we seek in the given file and namespace
@@ -225,12 +227,14 @@ namespace csc232
             return false;
         }
 
+        // NOLINTEND(bugprone-easily-swappable-parameters)
+
         /**
          * Run a command on the host operating system.
          * @param cmd the command to execute
          * @return the output of the command
          */
-        virtual auto exec( const char *cmd ) -> std::string
+        static auto exec( const char *cmd ) -> std::string
         {
             std::array<char, 128> buffer;
             std::string result;
