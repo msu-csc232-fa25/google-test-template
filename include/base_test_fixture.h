@@ -83,6 +83,169 @@ namespace csc232
             /* template method for any customized additional setup */
         }
 
+        /**
+         * Utility method to see if a class has been declared in some particular file.
+         * @param file_path the path to the file under interrogation
+         * @param class_name a class name whose declaration we seek in the given file
+         * @return true if the given class is declared in the given file, false otherwise.
+         */
+        virtual auto isClassDeclared( const std::string &file_path, const std::string &class_name ) -> bool
+        {
+            std::ifstream file( file_path );
+            if ( !file.is_open( ) )
+            {
+                std::cerr << "Unable to open file\n";
+                return false;
+            }
+
+            std::string line;
+            std::regex class_pattern( "\\bclass\\s+" + class_name + "\\b" );
+            while ( std::getline( file, line ) )
+            {
+                if ( std::regex_search( line, class_pattern ) )
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        /**
+         * Utility method to see if a class has been declared within a given namespace in some particular file.
+         * @param file_path the path to the file under interrogation
+         * @param namespace_name the namespace under interrogation
+         * @param class_name a class name whose declaration we seek in the given file and namespace
+         * @return true if the given class is declared in the specfied namespace, false otherwise
+         */
+        virtual auto isClassInNamespaceDeclared( const std::string &file_path, const std::string &namespace_name,
+                                                 const std::string &class_name ) -> bool
+        {
+            std::ifstream file( file_path );
+            if ( !file.is_open( ) )
+            {
+                std::cerr << "Unable to open file\n";
+                return false;
+            }
+
+            std::string line;
+            std::regex namespace_pattern( "\\bnamespace\\s+" + namespace_name + "\\b" );
+            std::regex class_pattern( "\\bclass\\s+" + class_name + "\\b" );
+            bool in_namespace = false;
+
+            while ( std::getline( file, line ) )
+            {
+                if ( std::regex_search( line, namespace_pattern ) )
+                {
+                    in_namespace = true;
+                }
+                if ( in_namespace && std::regex_search( line, class_pattern ) )
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        /**
+         * Utility method to see if a class has been declared within a given namespace, derived from some base class, in some particular file.
+         * @param file_path the path to the file under interrogation
+         * @param namespace_name the namespace under interrogation
+         * @param class_name a class name whose declaration we seek in the given file and namespace
+         * @param base_class_name a class name from which we are deriving
+         * @return true if the given class is declared in the given namespace and derived the given base class, false otherwise.
+         */
+        virtual auto isClassDerivedFromBase( const std::string &file_path, const std::string &namespace_name,
+                                             const std::string &class_name, const std::string &base_class_name ) -> bool
+        {
+            std::ifstream file( file_path );
+            if ( !file.is_open( ) )
+            {
+                std::cerr << "Unable to open file\n";
+                return false;
+            }
+
+            std::string line;
+            std::regex namespace_pattern( "\\bnamespace\\s+" + namespace_name + "\\b" );
+            std::regex class_pattern( "\\bclass\\s+" + class_name + "\\s*:\\s*public\\s+" + base_class_name + "\\b" );
+            bool in_namespace = false;
+
+            while ( std::getline( file, line ) )
+            {
+                if ( std::regex_search( line, namespace_pattern ) )
+                {
+                    in_namespace = true;
+                }
+                if ( in_namespace && std::regex_search( line, class_pattern ) )
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        /**
+         * 
+         * @param file_path the path to the file under interrogation
+         * @param namespace_name the namespace under interrogation
+         * @param class_name a class name whose declaration we seek in the given file and namespace
+         * @param method_name a method name we wish to determine is declared in the given class
+         * @return true if the given method is declared in a class found in the given namespace, false otherwise.
+         */
+        virtual auto isMethodDeclaredInClass( const std::string &file_path, const std::string &namespace_name, const std::string &class_name, const std::string &method_name ) -> bool
+        {
+            std::ifstream file( file_path );
+            if ( !file.is_open( ) )
+            {
+                std::cerr << "Unable to open file\n";
+                return false;
+            }
+
+            std::string line;
+            std::regex namespace_pattern( "\\bnamespace\\s+" + namespace_name + "\\b" );
+            std::regex class_pattern( "\\bclass\\s+" + class_name + "\\b" );
+            std::regex method_pattern( "\\b" + method_name + "\\s*\\(" );
+            bool in_namespace = false;
+            bool in_class = false;
+
+            while ( std::getline( file, line ) )
+            {
+                if ( std::regex_search( line, namespace_pattern ) )
+                {
+                    in_namespace = true;
+                }
+                if ( in_namespace && std::regex_search( line, class_pattern ) )
+                {
+                    in_class = true;
+                }
+                if ( in_class && std::regex_search( line, method_pattern ) )
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        /**
+         * Run a command on the host operating system.
+         * @param cmd the command to execute
+         * @return the output of the command
+         */
+        virtual auto exec( const char *cmd ) -> std::string
+        {
+            std::array<char, 128> buffer;
+            std::string result;
+            std::unique_ptr<FILE, decltype( &pclose )> pipe( popen( cmd, "r" ), pclose );
+            if ( !pipe )
+            {
+                throw std::runtime_error( "popen() failed!" );
+            }
+            while ( fgets( buffer.data( ), static_cast<int>( buffer.size( ) ), pipe.get( ) ) != nullptr )
+            {
+                result += buffer.data( );
+            }
+            return result;
+        }
+
     private:
         // Reusable objects for each unit test in this test fixture and any of its children
         std::stringstream buffer{ std::stringstream{} };
