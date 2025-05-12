@@ -86,9 +86,11 @@ namespace csc232
         // NOLINTBEGIN(bugprone-easily-swappable-parameters)
 
         /**
-         * Utility method to see if a class has been declared in some particular file.
+         * @brief Utility method to see if a class has been declared in some particular file.
+         *
          * @param file_path the path to the file under interrogation
          * @param class_name a class name whose declaration we seek in the given file
+         *
          * @return true if the given class is declared in the given file, false otherwise.
          */
         virtual auto is_class_declared( const std::string &file_path, const std::string &class_name ) -> bool
@@ -113,10 +115,12 @@ namespace csc232
         }
 
         /**
-         * Utility method to see if a class has been declared within a given namespace in some particular file.
+         * @brief Utility method to see if a class has been declared within a given namespace in some particular file.
+         *
          * @param file_path the path to the file under interrogation
          * @param namespace_name the namespace under interrogation
          * @param class_name a class name whose declaration we seek in the given file and namespace
+         *
          * @return true if the given class is declared in the specfied namespace, false otherwise
          */
         virtual auto is_class_in_namespace_declared( const std::string &file_path, const std::string &namespace_name,
@@ -149,11 +153,13 @@ namespace csc232
         }
 
         /**
-         * Utility method to see if a class has been declared within a given namespace, derived from some base class, in some particular file.
+         * @brief Utility method to see if a class has been declared within a given namespace, derived from some base class, in some particular file.
+         *
          * @param file_path the path to the file under interrogation
          * @param namespace_name the namespace under interrogation
          * @param class_name a class name whose declaration we seek in the given file and namespace
          * @param base_class_name a class name from which we are deriving
+         *
          * @return true if the given class is declared in the given namespace and derived the given base class, false otherwise.
          */
         virtual auto is_class_derived_from_base( const std::string &file_path, const std::string &namespace_name,
@@ -186,11 +192,13 @@ namespace csc232
         }
 
         /**
+         * @brief Utility method to see if a particular method has been declared in a given class.
          *
          * @param file_path the path to the file under interrogation
          * @param namespace_name the namespace under interrogation
          * @param class_name a class name whose declaration we seek in the given file and namespace
          * @param method_name a method name we wish to determine is declared in the given class
+         *
          * @return true if the given method is declared in a class found in the given namespace, false otherwise.
          */
         virtual auto is_method_declared_in_class( const std::string &file_path, const std::string &namespace_name, const std::string &class_name, const std::string &method_name ) -> bool
@@ -230,8 +238,10 @@ namespace csc232
         // NOLINTEND(bugprone-easily-swappable-parameters)
 
         /**
-         * Run a command on the host operating system.
+         * @brief Run a command on the host operating system.
+         *
          * @param cmd the command to execute
+         *
          * @return the output of the command
          */
         static auto exec( const char *cmd ) -> std::string
