@@ -7,10 +7,11 @@
  * @brief     Google Test implementation template.
  */
 
-#include "csc232.h"
-#include "gtest/gtest.h"
 #ifndef CSC232_BASE_TEST_FIXTURE_H
 #define CSC232_BASE_TEST_FIXTURE_H
+
+#include "csc232.h"
+#include "gtest/gtest.h"
 
 namespace csc232
 {
@@ -20,17 +21,13 @@ namespace csc232
     class CSC232BaseTestFixture : public ::testing::Test
     {
     public:
-        CSC232BaseTestFixture( ) : buffer{ std::stringstream{} }
-        {
-            // Intentionally empty; attributes initialized above.
-        }
+        CSC232BaseTestFixture( ) = default;
+        virtual ~CSC232BaseTestFixture( ) override = default;
 
         CSC232BaseTestFixture( const CSC232BaseTestFixture & ) = delete;
         auto operator=( const CSC232BaseTestFixture & ) -> CSC232BaseTestFixture & = delete;
         CSC232BaseTestFixture( CSC232BaseTestFixture && ) = delete;
         auto operator=( CSC232BaseTestFixture && ) -> CSC232BaseTestFixture & = delete;
-
-        ~CSC232BaseTestFixture( ) override = default;
 
     protected:
         void SetUp( ) override
@@ -63,7 +60,7 @@ namespace csc232
 
     private:
         // Reusable objects for each unit test in this test fixture and any of its children
-        std::stringstream buffer;
+        std::stringstream buffer{ std::stringstream{} };
         std::streambuf *sbuf{ nullptr };
         /*
          * With the above in place, you can now have tests on output statements
