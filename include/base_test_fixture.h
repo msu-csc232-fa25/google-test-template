@@ -84,7 +84,7 @@ namespace csc232
         }
 
         // NOLINTBEGIN(bugprone-easily-swappable-parameters)
-        
+
         /**
          * Utility method to see if a class has been declared in some particular file.
          * @param file_path the path to the file under interrogation
