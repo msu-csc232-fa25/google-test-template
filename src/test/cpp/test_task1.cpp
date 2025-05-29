@@ -8,8 +8,8 @@
  * @brief     Google Test implementation for task 1 activities.
  */
 
-#include "base_test_fixture.h"
 #include "csc232.h"
+#include "testing/base_test_fixture.h"
 #include "gtest/gtest.h"
 
 /**

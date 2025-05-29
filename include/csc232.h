@@ -19,11 +19,11 @@
 
 #define EXECUTE_PREAMBLE TRUE
 
-#define TEST_TASK1 FALSE
-#define TEST_TASK2 FALSE
-#define TEST_TASK3 FALSE
-#define TEST_TASK4 FALSE
-#define TEST_TASK5 FALSE
+#define TEST_TASK1 FALSE // TODO:  Task 1 - Step 1: Toggle TEST_TASK1 TO TRUE
+#define TEST_TASK2 FALSE // TODO:  Task 2 - Step 1: Toggle TEST_TASK2 TO TRUE
+#define TEST_TASK3 FALSE // TODO:  Task 3 - Step 1: Toggle TEST_TASK3 TO TRUE
+#define TEST_TASK4 FALSE // TODO:  Task 4 - Step 1: Toggle TEST_TASK4 TO TRUE
+#define TEST_TASK5 FALSE // TODO:  Task 5 - Step 1: Toggle TEST_TASK5 TO TRUE
 
 #include <algorithm>
 #include <cassert>
@@ -80,7 +80,7 @@ namespace csc232
         static std::random_device random_device;
         static std::mt19937 random_number_generator( random_device( ) );
 
-        std::uniform_int_distribution<int> dist( 0, DISTRIBUTION_RANGE );
+        std::uniform_int_distribution< int > dist( 0, DISTRIBUTION_RANGE );
 
         const auto dash = std::vector{ false, false, false, false, true, false, true, false,
                                        true, false, true, false, false, false, false, false };

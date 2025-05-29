@@ -10,7 +10,7 @@
 #ifndef CSC232_BASE_TEST_FIXTURE_H
 #define CSC232_BASE_TEST_FIXTURE_H
 
-#include "csc232.h"
+#include "../csc232.h"
 #include "gtest/gtest.h"
 
 /**
@@ -21,7 +21,7 @@ namespace csc232
     /**
      * @brief Base test fixture that sets up grading for this assignment.
      */
-    class CSC232BaseTestFixture : public ::testing::Test
+    class CSC232BaseTestFixture : public ::testing::Test // NOLINT(*-special-member-functions)
     {
     public:
         /**
@@ -32,27 +32,7 @@ namespace csc232
         /**
          * Default virtual destructor.
          */
-        virtual ~CSC232BaseTestFixture( ) override = default;
-
-        /**
-         * Deleted copy constructor.
-         */
-        CSC232BaseTestFixture( const CSC232BaseTestFixture & ) = delete;
-
-        /**
-         * Deleted copy assignment operator.
-         */
-        auto operator=( const CSC232BaseTestFixture & ) -> CSC232BaseTestFixture & = delete;
-
-        /**
-         * Deleted move constructor.
-         */
-        CSC232BaseTestFixture( CSC232BaseTestFixture && ) = delete;
-
-        /**
-         * Deleted move assignment operator.
-         */
-        auto operator=( CSC232BaseTestFixture && ) -> CSC232BaseTestFixture & = delete;
+        virtual ~CSC232BaseTestFixture( ) = default;
 
     protected:
         void SetUp( ) override
@@ -174,7 +154,7 @@ namespace csc232
 
             std::string line;
             std::regex namespace_pattern( "\\bnamespace\\s+" + namespace_name + "\\b" );
-            std::regex class_pattern( "\\bclass\\s+" + class_name + "\\s*:\\s*public\\s+" + base_class_name + "\\b" );
+            std::regex class_pattern( "\\bclass\\s+" + class_name + R"(\s*:\s*public\s+)" + base_class_name + "\\b" );
             bool in_namespace = false;
 
             while ( std::getline( file, line ) )
@@ -234,31 +214,7 @@ namespace csc232
             }
             return false;
         }
-
         // NOLINTEND(bugprone-easily-swappable-parameters)
-
-        /**
-         * @brief Run a command on the host operating system.
-         *
-         * @param cmd the command to execute
-         *
-         * @return the output of the command
-         */
-        static auto exec( const char *cmd ) -> std::string
-        {
-            std::array<char, 128> buffer;
-            std::string result;
-            std::unique_ptr<FILE, decltype( &pclose )> pipe( popen( cmd, "r" ), pclose );
-            if ( !pipe )
-            {
-                throw std::runtime_error( "popen() failed!" );
-            }
-            while ( fgets( buffer.data( ), static_cast<int>( buffer.size( ) ), pipe.get( ) ) != nullptr )
-            {
-                result += buffer.data( );
-            }
-            return result;
-        }
 
     private:
         // Reusable objects for each unit test in this test fixture and any of its children
