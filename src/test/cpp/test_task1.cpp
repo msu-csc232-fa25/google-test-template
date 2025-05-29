@@ -9,9 +9,8 @@
  */
 
 #include "csc232.h"
-#include "gtest/gtest.h"
 #include "testing/base_test_fixture.h"
-
+#include "gtest/gtest.h"
 
 /**
  * @brief Namespace to encapsulate course specific macros, declarations and definitions.

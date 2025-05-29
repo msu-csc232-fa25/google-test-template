@@ -80,7 +80,7 @@ namespace csc232
         static std::random_device random_device;
         static std::mt19937 random_number_generator( random_device( ) );
 
-        std::uniform_int_distribution<int> dist( 0, DISTRIBUTION_RANGE );
+        std::uniform_int_distribution< int > dist( 0, DISTRIBUTION_RANGE );
 
         const auto dash = std::vector{ false, false, false, false, true, false, true, false,
                                        true, false, true, false, false, false, false, false };
