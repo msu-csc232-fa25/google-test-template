@@ -4,6 +4,9 @@ IndentWidth: 4
 TabWidth: 4
 BreakBeforeBraces: Allman
 AllowShortIfStatementsOnASingleLine: false
+BraceWrapping:
+  SplitEmptyFunction: true
+
 IndentCaseLabels: false
 ColumnLimit: 0
 AccessModifierOffset: -4
@@ -16,6 +19,10 @@ SpacesInParensOptions:
   InEmptyParentheses: true
   Other: true
 SpacesInSquareBrackets: true
+SpacesInAngles: true
+
+SpaceInEmptyBlock: true
+Cpp11BracedListStyle: false
 AlignTrailingComments:
   Kind: Always
   OverEmptyLines: 1

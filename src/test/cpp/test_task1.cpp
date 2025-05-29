@@ -8,9 +8,10 @@
  * @brief     Google Test implementation for task 1 activities.
  */
 
-#include "base_test_fixture.h"
 #include "csc232.h"
 #include "gtest/gtest.h"
+#include "testing/base_test_fixture.h"
+
 
 /**
  * @brief Namespace to encapsulate course specific macros, declarations and definitions.
