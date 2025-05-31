@@ -23,6 +23,9 @@
         "ms-vscode.live-server",
         "ms-vscode.cpptools-extension-pack"
       ]
+    },
+    "jetbrains" : {
+      "backend" : "CLion"
     }
   }
   // Use 'postCreateCommand' to run commands after the container is created.

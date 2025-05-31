@@ -49,6 +49,8 @@
 #include <utility>
 #include <vector>
 
+#include "testing/main_page.h"
+
 /** Common iostream objects */
 using std::cerr;
 using std::cin;
