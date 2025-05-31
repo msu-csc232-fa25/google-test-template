@@ -16,6 +16,7 @@ BraceWrapping:
   SplitEmptyFunction: true
   SplitEmptyRecord: true
   SplitEmptyNamespace: true
+  SplitEmptyFunction: true
 IndentCaseLabels: false
 ColumnLimit: 0
 AccessModifierOffset: -4
