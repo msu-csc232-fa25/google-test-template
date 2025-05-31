@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16.3)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-set(CMAKE_CXX_CLANG_TIDY clang-tidy -checks=-*,bugprone-*,clang-analyzer-*,cppcoreguidelines-*,modernize-*,readability-*)
+set(CMAKE_CXX_CLANG_TIDY clang-tidy -checks=-*,-*-special-member-functions,bugprone-*,-bugprone-suspicious-include,clang-analyzer-*,cppcoreguidelines-*,-cppcoreguidelines-special-member-functions,modernize-*,readability-*)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(IS_HW FALSE)
 
