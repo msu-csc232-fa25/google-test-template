@@ -18,6 +18,20 @@
  */
 namespace csc232
 {
+    // clang-format off
+    template < typename T, typename C >
+    concept HasReadMethod = requires( const C object )
+    {
+        { object.read( ) } -> std::same_as< T >;
+    };
+
+    template < typename T, typename C >
+    concept HasWriteMethod = requires( C object, const T &value )
+    {
+        { object.write( value ) } -> std::same_as< void >;
+    };
+    // clang-format off
+
     /**
      * @brief Base test fixture that sets up grading for this assignment.
      */

@@ -5,8 +5,18 @@ TabWidth: 4
 BreakBeforeBraces: Allman
 AllowShortIfStatementsOnASingleLine: false
 BraceWrapping:
+  AfterFunction: true
+  AfterClass: true
+  AfterStruct: true
+  AfterEnum: true
+  AfterControlStatement: true
+  AfterNamespace: true
+  AfterExternBlock: true
+  BeforeLambdaBody: true
   SplitEmptyFunction: true
-
+  SplitEmptyRecord: true
+  SplitEmptyNamespace: true
+  SplitEmptyFunction: true
 IndentCaseLabels: false
 ColumnLimit: 0
 AccessModifierOffset: -4
