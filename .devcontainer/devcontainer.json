@@ -1,0 +1,22 @@
+{
+    "name": "C++ Development",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+        "ghcr.io/devcontainers/features/clang:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "llvm-vs-code-extensions.vscode-clangd",
+                "xaver.clang-format",
+                "notskm.clang-tidy"
+            ],
+            "settings": {
+                "clangd.path": "/usr/bin/clangd",
+                "clang-format.executable": "/usr/bin/clang-format",
+                "clang-tidy.executable": "/usr/bin/clang-tidy"
+            }
+        }
+    },
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y clang clang-format clang-tidy"
+}

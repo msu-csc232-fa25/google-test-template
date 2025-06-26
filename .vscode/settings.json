@@ -2,7 +2,6 @@
   "editor.formatOnSave": true,
   "editor.fontFamily": "'Ubuntu Mono','Source Code Pro','mono'",
   "files.insertFinalNewline": true,
-  "C_Cpp.clang_format_fallbackStyle": "LLVM",
   "files.associations": {
     "**/include/c++/**": "cpp",
     "**/src/main/cpp/**": "cpp",
