@@ -16,7 +16,6 @@ BraceWrapping:
   SplitEmptyFunction: true
   SplitEmptyRecord: true
   SplitEmptyNamespace: true
-  SplitEmptyFunction: true
 IndentCaseLabels: false
 ColumnLimit: 0
 AccessModifierOffset: -4
@@ -30,7 +29,6 @@ SpacesInParensOptions:
   Other: true
 SpacesInSquareBrackets: true
 SpacesInAngles: true
-
 SpaceInEmptyBlock: true
 Cpp11BracedListStyle: false
 AlignTrailingComments:
