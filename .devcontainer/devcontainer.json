@@ -1,22 +1,35 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/cpp
 {
-    "name": "C++ Development",
-    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-    "features": {
-        "ghcr.io/devcontainers/features/clang:1": {}
+  "name": "C++",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+      "packages": "doxygen,graphviz,mscgen,dia"
+    }
+  },
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [
+    3000
+  ],
+  // Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.live-server",
+        "ms-vscode.cpptools-extension-pack"
+      ]
     },
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "llvm-vs-code-extensions.vscode-clangd",
-                "xaver.clang-format",
-                "notskm.clang-tidy"
-            ],
-            "settings": {
-                "clangd.path": "/usr/bin/clangd",
-                "clang-format.executable": "/usr/bin/clang-format",
-                "clang-tidy.executable": "/usr/bin/clang-tidy"
-            }
-        }
-    },
-    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y clang clang-format clang-tidy"
+    "jetbrains": {
+      "backend": "CLion"
+    }
+  }
+  // Use 'postCreateCommand' to run commands after the container is created.
+  // "postCreateCommand": "gcc -v",
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
 }
