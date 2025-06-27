@@ -15,10 +15,5 @@
 
 auto main() -> int
 {
-    auto jo = false;
-    if ( jo )
-    {
-        jo = false;
-    }
     return EXIT_SUCCESS;
 }
