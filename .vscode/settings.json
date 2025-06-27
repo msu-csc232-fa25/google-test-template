@@ -1,5 +1,7 @@
 {
   "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+  "editor.formatOnPaste": true,
   "editor.fontFamily": "'Ubuntu Mono','Source Code Pro','mono'",
   "files.insertFinalNewline": true,
   "files.associations": {
@@ -9,5 +11,4 @@
     "algorithm": "cpp",
     "cmath": "cpp"
   },
-  "sonarlint.pathToCompileCommands": "${workspaceFolder}/build/compile_commands.json"
 }

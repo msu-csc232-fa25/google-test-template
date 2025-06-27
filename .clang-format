@@ -13,24 +13,21 @@ BraceWrapping:
   AfterNamespace: true
   AfterExternBlock: true
   BeforeLambdaBody: true
-  SplitEmptyFunction: true
   SplitEmptyRecord: true
   SplitEmptyNamespace: true
+  SplitEmptyFunction: true
 IndentCaseLabels: false
 ColumnLimit: 0
 AccessModifierOffset: -4
 NamespaceIndentation: All
 FixNamespaceComments: false
-SpacesInParens: Custom
-SpacesInParensOptions:
-  InConditionalStatements: true
-  InCStyleCasts: true
-  InEmptyParentheses: true
-  Other: true
 SpacesInSquareBrackets: true
 SpacesInAngles: true
+SpacesInContainerLiterals: true
+SpacesInCStyleCastParentheses: true
+SpacesInParentheses: true
 SpaceInEmptyBlock: true
-Cpp11BracedListStyle: false
+#Cpp11BracedListStyle: false
 AlignTrailingComments:
   Kind: Always
   OverEmptyLines: 1
