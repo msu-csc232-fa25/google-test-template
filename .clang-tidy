@@ -1,4 +1,4 @@
-Checks: '-*,bugprone-*,-bugprone-suspicious-include,clang-analyzer-*,cppcoreguidelines-*,-cppcoreguidelines-special-member-functions,modernize-*,readability-*'
+Checks: '-*,bugprone-*,-bugprone-suspicious-include,clang-analyzer-*,cppcoreguidelines-*,-cppcoreguidelines-special-member-functions,-cppcoreguidelines-owning-memory,modernize-*,readability-*'
 CheckOptions:
   - key: cppcoreguidelines-macro-usage.CheckCapsOnly
     value: true
