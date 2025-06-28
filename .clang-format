@@ -25,9 +25,15 @@ SpacesInSquareBrackets: true
 SpacesInAngles: true
 SpacesInContainerLiterals: true
 SpacesInCStyleCastParentheses: true
-SpacesInParentheses: true
 SpaceInEmptyBlock: true
-#Cpp11BracedListStyle: false
+SpacesInParens: Custom
+SpacesInParensOptions:
+  ExceptDoubleParentheses: true
+  InCStyleCasts: true
+  InConditionalStatements: true
+  InEmptyParentheses: true
+  Other: true
+Cpp11BracedListStyle: true
 AlignTrailingComments:
   Kind: Always
   OverEmptyLines: 1
