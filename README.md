@@ -81,10 +81,14 @@ git checkout -b develop
 Make sure you are on the `develop` branch before you get started. Make all your commits on the `develop` branch.
 
 ```bash
-git status
+git branch
 ```
 
-_You may have to type the `q` character to get back to the command line prompt after viewing the status._
+_You may have to type the `q` character to get back to the command line prompt after viewing the status. If this annoys you, it can be configured to not exemplify this behavior. Simply type the following in your terminal window:_
+
+```shell
+git config --global pager.branch false
+```
 
 ## Tasks
 
