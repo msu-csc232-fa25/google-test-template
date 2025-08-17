@@ -24,7 +24,7 @@ fi
 
 # Install the specified packages without user interaction.
 # The -y flag automatically answers "yes" to prompts.
-apt install -y build-essential doxygen mscgen dia graphviz valgrind gdb-doc gdbserver valgrind-mpi clang llvm clang-tidy clang-format
+apt install -y build-essential cmake cmake-doc doxygen mscgen dia graphviz valgrind gdb-doc gdbserver valgrind-mpi clang llvm clang-tidy clang-format
 if [ $? -ne 0 ]; then
     echo "Error installing packages. Exiting."
     exit 1
