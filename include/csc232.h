@@ -25,31 +25,17 @@
 #define TEST_TASK4 FALSE // TODO:  Task 4 - Step 1: Toggle TEST_TASK4 TO TRUE
 #define TEST_TASK5 FALSE // TODO:  Task 5 - Step 1: Toggle TEST_TASK5 TO TRUE
 
-#include <algorithm>
 #include <cassert>
 #include <climits>
 #include <cmath>
 #include <cstdlib>
 #include <cstring>
 #include <ctime>
-#include <fstream>
-#include <functional>
 #include <iomanip>
 #include <iostream>
-#include <list>
-#include <map>
-#include <memory>
-#include <queue>
 #include <random>
-#include <regex>
-#include <set>
-#include <stack>
-#include <stdexcept>
 #include <string>
-#include <utility>
 #include <vector>
-
-#include "testing/main_page.h"
 
 /** Common iostream objects */
 using std::cerr;
