@@ -1,5 +1,6 @@
 # Project Specific
 api
+.cache/
 
 # Visual Studio
 .vs
@@ -106,11 +107,11 @@ bh_unicode_properties.cache
 GitHub.sublime-settings
 
 ### VisualStudioCode template
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+.vscode/
+# !.vscode/settings.json
+# !.vscode/tasks.json
+# !.vscode/launch.json
+# !.vscode/extensions.json
 
 ### Eclipse template
 .metadata
