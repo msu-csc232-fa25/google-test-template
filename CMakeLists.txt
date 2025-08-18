@@ -66,20 +66,20 @@ add_custom_command(TARGET test_task2 POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy
 add_custom_command(TARGET test_task3 POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_CURRENT_LIST_DIR}/src/test/resources/task3_test_data.txt ${CMAKE_CURRENT_BINARY_DIR})
 
 if (IS_HW)
-    set(SRC_TASK4_TEST_FILES src/test/cpp/task4_test.cpp
+    set(SRC_TASK4_TEST_FILES src/test/cpp/test_task4.cpp
             src/main/cpp/expanded_templates.cpp)
-    set(SRC_TASK5_TEST_FILES src/test/cpp/task5_test.cpp
+    set(SRC_TASK5_TEST_FILES src/test/cpp/test_task5.cpp
             src/main/cpp/expanded_templates.cpp)
     add_executable(task4_test ${SRC_TASK4_TEST_FILES})
     add_executable(task5_test ${SRC_TASK5_TEST_FILES})
-    target_link_libraries(task4_test GTest::gtest_main)
-    target_link_libraries(task5_test GTest::gtest_main)
-    gtest_discover_tests(task4_test)
-    gtest_discover_tests(task5_test)
-    target_include_directories(task4_test PUBLIC ${CMAKE_CURRENT_LIST_DIR}/include ${CMAKE_CURRENT_LIST_DIR}/src/main/cpp)
-    target_include_directories(task5_test PUBLIC ${CMAKE_CURRENT_LIST_DIR}/include ${CMAKE_CURRENT_LIST_DIR}/src/main/cpp)
-    add_custom_command(TARGET task4_test PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_CURRENT_LIST_DIR}/src/test/resources/task4_test_data.txt ${CMAKE_CURRENT_BINARY_DIR})
-    add_custom_command(TARGET task5_test PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_CURRENT_LIST_DIR}/src/test/resources/task5_test_data.txt ${CMAKE_CURRENT_BINARY_DIR})
+    target_link_libraries(test_task4 GTest::gtest_main)
+    target_link_libraries(test_task5 GTest::gtest_main)
+    gtest_discover_tests(test_task4)
+    gtest_discover_tests(test_task5)
+    target_include_directories(test_task4 PUBLIC ${CMAKE_CURRENT_LIST_DIR}/include ${CMAKE_CURRENT_LIST_DIR}/src/main/cpp)
+    target_include_directories(test_task5 PUBLIC ${CMAKE_CURRENT_LIST_DIR}/include ${CMAKE_CURRENT_LIST_DIR}/src/main/cpp)
+    add_custom_command(TARGET test_task4 PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_CURRENT_LIST_DIR}/src/test/resources/task4_test_data.txt ${CMAKE_CURRENT_BINARY_DIR})
+    add_custom_command(TARGET test_task6 PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_CURRENT_LIST_DIR}/src/test/resources/task5_test_data.txt ${CMAKE_CURRENT_BINARY_DIR})
 endif ()
 
 # first we can indicate the documentation build as an option and set it to OFF by default

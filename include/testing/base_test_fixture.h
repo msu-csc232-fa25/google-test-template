@@ -10,8 +10,7 @@
 #ifndef CSC232_BASE_TEST_FIXTURE_H
 #define CSC232_BASE_TEST_FIXTURE_H
 
-#include "../csc232.h"
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 
 /**
  * Namespace to encapsulate course work in CSC232 - Data Structures.

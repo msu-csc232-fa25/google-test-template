@@ -28,7 +28,7 @@ jobs:
           extra-args: '-std=c++20 -I./include -I/usr/include/c++/14 -Wall'
           thread-comments: ${{ github.event_name == 'pull_request' && 'update' }}
           files-changed-only: false
-          ignore: '.github|build|src/test/cpp'
+          ignore: '.github|build|src/test/cpp|include/testing'
       - name: Quick check
         run: ls -l /usr/bin/clang*
       - name: Fail fast?!
