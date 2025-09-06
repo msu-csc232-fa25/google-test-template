@@ -27,6 +27,45 @@ your newly created repository:
 - Using Codespaces directly in your web browser that employees the Visual Studio Code online IDE, or
 - Using the IDE of your choice on your local machine
 
+### ⚙️ Setup
+
+Included in this repository is a script named [`setup.sh`](./setup.sh) that installs all the tools used by the GitHub actions that ultimately grade your assignment and that can be utilized by an IDE to help write code using modern styles and practices. This script is intended to run in a Debian distribution of Linux (e.g., Ubuntu). Our codespaces run Ubuntu, so it is advised you develop in a codespace.
+
+To run this script (and it should be the first thing you do), simply open a terminal window and type:
+
+```shell
+sudo ./setup.sh
+```
+
+This script might take a minute or two to complete. You will also find a manual decision to make regarding
+
+```
+Configuring openssh-server
+--------------------------
+
+A new version (/tmp/tmp.1tzvgwylD9) of configuration file /etc/ssh/sshd_config
+is available, but the version installed currently has been locally modified.
+
+  1. install the package maintainer's version
+  2. keep the local version currently installed
+  3. show the differences between the versions
+  4. show a side-by-side difference between the versions
+  5. show a 3-way difference between available versions
+  6. do a 3-way merge between available versions
+  7. start a new shell to examine the situation
+What do you want to do about modified configuration file sshd_config?
+```
+
+Depending on your terminal window and font sizes, you may not see all the options immediately (in which case you'll see `[More]` -- just hit the space bar until you see the prompt question). Select option **2** to `keep the local version currently installed`.
+
+You'll see the following message when the script completes successfully:
+
+```
+All specified packages have been installed successfully.
+```
+
+and you'll be back at the command line prompt.
+
 ### Codespaces
 
 If a Codespace is available for use (and this is your preferred method of development), open your newly created
