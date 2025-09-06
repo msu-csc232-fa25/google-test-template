@@ -37,7 +37,7 @@ To run this script (and it should be the first thing you do), simply open a term
 sudo ./setup.sh
 ```
 
-This script might take a minute or two to complete. You will also find a manual decision to make regarding
+This script might take a minute or two to complete. You will also find a manual decision to make for configuring the `openssh-server`.
 
 ```
 Configuring openssh-server
@@ -47,7 +47,7 @@ A new version (/tmp/tmp.1tzvgwylD9) of configuration file /etc/ssh/sshd_config
 is available, but the version installed currently has been locally modified.
 
   1. install the package maintainer's version
-  2. keep the local version currently installed
+  2. keep the local version currently installed <-- choose this option
   3. show the differences between the versions
   4. show a side-by-side difference between the versions
   5. show a 3-way difference between available versions
