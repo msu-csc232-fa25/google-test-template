@@ -129,6 +129,21 @@ _You may have to type the `q` character to get back to the command line prompt a
 git config --global pager.branch false
 ```
 
+#### Manually formatting your files
+
+Here's a linux command you can run from the root folder of your respositories terminal window to automatically reformat your files (if it can) in place:
+
+```shell
+find ./include ./src -name '*.h' -o -name '*.hpp' -o -name '*.c' -o -name '*.cpp' | xargs clang-format -i
+```
+
+* `find` generates a list of file names that match the file patterns
+* `|` is the pipe symbol; it's "piping" the list of file names found by the previous command (`find`)
+* `xargs` takes each of these file names piped into it, and supplies it as an argument to the
+* `clang-format` command, which is executed in the interactive switch (`-i`) so as to make the changes in place
+
+This is something you should get in the habit of doing to ensure you're getting full points on your style category of your assignments. This command _presumes_ you have run the [`setup.sh`](./setup.sh) script first, which installs the clang-format program. See [Setup](#️-setup).
+
 ## Tasks
 
 This assignment consists of the following tasks:
