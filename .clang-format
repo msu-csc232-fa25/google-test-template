@@ -28,7 +28,6 @@ SpacesInCStyleCastParentheses: true
 SpaceInEmptyBlock: true
 SpacesInParens: Custom
 SpacesInParensOptions:
-  ExceptDoubleParentheses: true
   InCStyleCasts: true
   InConditionalStatements: true
   InEmptyParentheses: true
