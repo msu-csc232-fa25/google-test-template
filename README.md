@@ -24,8 +24,8 @@ After accepting this assignment with the
 provided GitHub Classroom Assignment link, decide how you want to work with
 your newly created repository:
 
-- Using Codespaces directly in your web browser that employees the Visual Studio Code online IDE, or
-- Using the IDE of your choice on your local machine
+* Using Codespaces directly in your web browser that employees the Visual Studio Code online IDE, or
+* Using the IDE of your choice on your local machine
 
 ### ⚙️ Setup
 
@@ -131,7 +131,7 @@ git config --global pager.branch false
 
 #### Manually formatting your files
 
-Here's a linux command you can run from the root folder of your respositories terminal window to automatically reformat your files (if it can) in place:
+Here's a linux command you can run from the root folder of your repositories terminal window to automatically reformat your files (if it can) in place:
 
 ```shell
 find ./include ./src -name '*.h' -o -name '*.hpp' -o -name '*.c' -o -name '*.cpp' | xargs clang-format -i
@@ -148,11 +148,11 @@ This is something you should get in the habit of doing to ensure you're getting 
 
 This assignment consists of the following tasks:
 
-- Task 1: <TODO: Declare me!>
-- Task 2: <TODO: Declare me!>
-- Task 3: <TODO: Declare me!>
-- Task 4: <TODO: Declare me - or erase me!>
-- Task 5: <TODO: Declare me - or erase me!>
+* Task 1: <TODO: Declare me!>
+* Task 2: <TODO: Declare me!>
+* Task 3: <TODO: Declare me!>
+* Task 4: <TODO: Declare me - or erase me!>
+* Task 5: <TODO: Declare me - or erase me!>
 
 Pol, neuter abactor!
 
