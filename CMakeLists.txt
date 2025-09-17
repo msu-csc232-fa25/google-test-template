@@ -24,7 +24,7 @@ set(SRC_TEST_TASK3 src/test/cpp/test_task3.cpp
         src/main/cpp/expanded_templates.cpp)
 
 # Setup Google Test
-set(GOOGLE_TEST_ARCHIVE "v1.14.0")
+set(GOOGLE_TEST_ARCHIVE "v1.17.0")
 include(FetchContent)
 FetchContent_Declare(
         googletest
@@ -70,8 +70,8 @@ if (IS_HW)
             src/main/cpp/expanded_templates.cpp)
     set(SRC_TASK5_TEST_FILES src/test/cpp/test_task5.cpp
             src/main/cpp/expanded_templates.cpp)
-    add_executable(task4_test ${SRC_TASK4_TEST_FILES})
-    add_executable(task5_test ${SRC_TASK5_TEST_FILES})
+    add_executable(test_task4 ${SRC_TASK4_TEST_FILES})
+    add_executable(test_task5 ${SRC_TASK5_TEST_FILES})
     target_link_libraries(test_task4 GTest::gtest_main)
     target_link_libraries(test_task5 GTest::gtest_main)
     gtest_discover_tests(test_task4)
@@ -79,7 +79,7 @@ if (IS_HW)
     target_include_directories(test_task4 PUBLIC ${CMAKE_CURRENT_LIST_DIR}/include ${CMAKE_CURRENT_LIST_DIR}/src/main/cpp)
     target_include_directories(test_task5 PUBLIC ${CMAKE_CURRENT_LIST_DIR}/include ${CMAKE_CURRENT_LIST_DIR}/src/main/cpp)
     add_custom_command(TARGET test_task4 PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_CURRENT_LIST_DIR}/src/test/resources/task4_test_data.txt ${CMAKE_CURRENT_BINARY_DIR})
-    add_custom_command(TARGET test_task6 PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_CURRENT_LIST_DIR}/src/test/resources/task5_test_data.txt ${CMAKE_CURRENT_BINARY_DIR})
+    add_custom_command(TARGET test_task5 PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_CURRENT_LIST_DIR}/src/test/resources/task5_test_data.txt ${CMAKE_CURRENT_BINARY_DIR})
 endif ()
 
 # first we can indicate the documentation build as an option and set it to OFF by default
