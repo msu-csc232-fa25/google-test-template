@@ -198,7 +198,7 @@ your `develop` branch into your `main` branch.
 You can use `gh` to create this pull request right from your command-line prompt:
 
 ```bash
-gh pr create --assignee "@me" --title "Some appropriate title" --body "A message to populate description, e.g., Go Bills!" --head develop --base main --reviewer msu-csc232-sp25/graders
+gh pr create --assignee "@me" --title "Some appropriate title" --body "A message to populate description, e.g., Go Bills!" --head develop --base main --reviewer msu-csc232-fa25/graders
 ```
 
 An "appropriate" title is at a minimum, the name of the assignment, e.g., `LAB02` or `HW04`, etc.
