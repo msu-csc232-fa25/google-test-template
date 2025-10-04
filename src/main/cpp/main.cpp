@@ -11,9 +11,11 @@
  * @copyright Copyright (c) 2025 James R. Daehn
  */
 
-#include "csc232.h"
+#include <cstdlib>
+#include <iostream>
 
 auto main( ) -> int
 {
+    std::cout << "Main target" << std::endl;
     return EXIT_SUCCESS;
 }
