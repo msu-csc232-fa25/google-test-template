@@ -4,7 +4,7 @@
     {
       "name": "clang-sanitizers",
       "hidden": false,
-      "generator": "Ninja",
+      "generator": "Unix Makefiles",
       "binaryDir": "${sourceDir}/build",
       "cacheVariables": {
         "CMAKE_C_COMPILER": "clang",
