@@ -4,6 +4,17 @@ set(IS_HW FALSE)
 
 project(lab-or-hw)
 
+option(ENABLE_SANITIZERS "Enable sanitizers in Debug builds" ON)
+
+if (ENABLE_SANITIZERS AND CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+        message(STATUS "Sanitizers enabled for Debug build")
+        set(SANITIZER_FLAGS "-fsanitize=address,undefined -fno-omit-frame-pointer")
+        set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${SANITIZER_FLAGS}")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${SANITIZER_FLAGS}")
+    endif ()
+endif ()
+
 if (CMAKE_VERSION GREATER_EQUAL "3.24.0")
     cmake_policy(SET CMP0135 NEW)
 endif ()
