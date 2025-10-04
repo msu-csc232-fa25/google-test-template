@@ -18,11 +18,11 @@
 #endif
 
 #if TEST_TASK2
-// Place holder for task 1 demo code
+// Place holder for task 2 demo code
 #endif
 
 #if TEST_TASK3
-// Place holder for task 1 demo code
+// Place holder for task 3 demo code
 #endif
 
 auto main( ) -> int
