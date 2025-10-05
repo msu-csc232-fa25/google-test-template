@@ -25,8 +25,4 @@
 // Place holder for task 3 demo code
 #endif
 
-auto main( ) -> int
-{
-    std::cout << "Demo target" << std::endl;
-    return EXIT_SUCCESS;
-}
+auto main( ) -> int{std::cout << "Demo target" << std::endl;return EXIT_SUCCESS;}
