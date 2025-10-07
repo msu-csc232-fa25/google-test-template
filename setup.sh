@@ -9,7 +9,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # Update package lists.
-apt update && export DEBIAN_FRONTEND=noninteractive -y
+apt update -y && export DEBIAN_FRONTEND=noninteractive
 if [ $? -ne 0 ]; then
     echo "Error updating package lists. Exiting."
     exit 1
