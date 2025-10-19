@@ -14,15 +14,15 @@
 #include "csc232.h"
 
 #if TEST_TASK1
-// Place holder for task 1 demo code
+// Placeholder for task 1 demo code
 #endif
 
 #if TEST_TASK2
-// Place holder for task 2 demo code
+// Placeholder for task 2 demo code
 #endif
 
 #if TEST_TASK3
-// Place holder for task 3 demo code
+// Placeholder for task 3 demo code
 #endif
 
 auto main( ) -> int{std::cout << "Demo target" << std::endl;return EXIT_SUCCESS;}
