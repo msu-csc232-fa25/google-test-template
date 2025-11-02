@@ -2,7 +2,6 @@
   "name": "C++ Dev Container",
   "image": "mcr.microsoft.com/devcontainers/cpp:ubuntu-24.04",
   "features": {
-    "ghcr.io/devcontainers-extra/features/cmake:1": {},
     "ghcr.io/devcontainers-community/features/llvm:3": {},
     "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
